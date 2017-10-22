@@ -29,6 +29,17 @@ class node
 		inorder(rt.r);
 	}
 	
+	static void preorder(node rt)
+	{
+		if(rt==null)
+		{
+			return;
+		}
+		System.out.print(rt.data + " ");
+		preorder(rt.l);
+		preorder(rt.r);
+	}
+	
 	static public void levelorder(node rt)
 	{
 		Queue<node> q = new LinkedList<>();
@@ -47,6 +58,17 @@ class node
 				q.add(t.r);
 			}
 		}
+	}
+	
+	static void postorder(node rt)
+	{
+		if(rt==null)
+		{
+			return;
+		}
+		postorder(rt.l);
+		postorder(rt.r);
+		System.out.print(rt.data + " ");
 	}
 	
 }
@@ -68,11 +90,17 @@ public class Traversal {
 		 	4
 		  5  
 		 */
-		System.out.println("Inoder ");
+		System.out.println("Inorder ");
 		node.inorder(rt);
 		
 		System.out.println("\nLevelorder ");
 		node.levelorder(rt);
+		
+		System.out.println("\nPreorder ");
+		node.preorder(rt);
+		
+		System.out.println("\nPostorder ");
+		node.postorder(rt);
 
 	}
 
