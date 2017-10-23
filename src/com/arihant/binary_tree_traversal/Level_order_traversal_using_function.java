@@ -42,12 +42,12 @@ public class Level_order_traversal_using_function {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		node rt = new node();
-		rt = node.newnode(1);
-		rt.l = node.newnode(2);
-		rt.r = node.newnode(3);
-		rt.l.l = node.newnode(4);
-		rt.l.r = node.newnode(5);
-		rt.r.r = node.newnode(6);
+		rt 		= node.newnode(1);
+		rt.l 	= node.newnode(2);
+		rt.r 	= node.newnode(3);
+		rt.l.l 	= node.newnode(4);
+		rt.l.r 	= node.newnode(5);
+		rt.r.r 	= node.newnode(6);
 		/*
 		 Tree is :
 		 		1
