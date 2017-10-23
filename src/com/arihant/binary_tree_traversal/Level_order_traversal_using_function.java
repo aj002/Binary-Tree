@@ -6,7 +6,7 @@ public class Level_order_traversal_using_function {
 	{
 		if(rt==null)
 		{
-			return 0;
+			return -1;
 		}
 		int l = height(rt.l);
 		int r = height(rt.r);
@@ -15,6 +15,27 @@ public class Level_order_traversal_using_function {
 	
 	static public void printLevelorder(node rt)
 	{
+		for(int i=1;i<=height(rt)+1;i++)
+		{
+			printGivenLevel(rt,i);
+		}
+	}
+	
+	static public void printGivenLevel(node rt, int lvl)
+	{
+		if(rt == null)
+		{
+			return;
+		}
+		else if(lvl == 1)
+		{
+			System.out.print(rt.data + " ");
+		}
+		else
+		{
+			printGivenLevel(rt.l,lvl-1);
+			printGivenLevel(rt.r,lvl-1);
+		}
 		
 	}
 
@@ -26,13 +47,16 @@ public class Level_order_traversal_using_function {
 		rt.r = node.newnode(3);
 		rt.l.l = node.newnode(4);
 		rt.l.r = node.newnode(5);
+		rt.r.r = node.newnode(6);
 		/*
 		 Tree is :
 		 		1
 		 	  2   3
-		 	 4 5
+		 	 4 5   6
 		 */
-		System.out.println("Height of the tree is " + (height(rt)- 1));
+		System.out.println("Height of the tree is " + height(rt));
+		System.out.println("Level Order Traversal using function");
+		printLevelorder(rt);
 
 	}
 }
