@@ -18,6 +18,7 @@ public class Level_order_traversal_using_function {
 		for(int i=1;i<=height(rt)+1;i++)
 		{
 			printGivenLevel(rt,i);
+			System.out.println();
 		}
 	}
 	
