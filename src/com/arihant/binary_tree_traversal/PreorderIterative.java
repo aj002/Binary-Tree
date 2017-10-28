@@ -2,26 +2,23 @@ package com.arihant.binary_tree_traversal;
 
 import java.util.Stack;
 
-public class PostorderTraversalWithoutRecursion
+public class PreorderIterative 
 {
 	public static void traverse(node rt)
 	{
 		Stack<node> s = new Stack<>();
-		if(rt==null)
-		{
-			return;
-		}
 		s.push(rt);
 		while(!s.isEmpty())
 		{
-			node t = s.peek();
-			if(t.l == null && t.r == null)
+			node t = s.pop();
+			System.out.print(t.data + " ");
+			if(t.r != null)
 			{
-				System.out.println(s.pop());
+				s.push(t.r);
 			}
-			else
+			if(t.l != null)
 			{
-				
+				s.push(t.l);
 			}
 		}
 	}
@@ -43,7 +40,7 @@ public class PostorderTraversalWithoutRecursion
 		  5  
 		 */
 		
-		System.out.println("Postorder ");
+		System.out.println("Iterative Preorder traversal ");
 		traverse(rt);
 
 	}
